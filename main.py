@@ -41,6 +41,7 @@ table_row = soup.find('tr').parent.findNextSibling()
 
 try:
     if table_row.find('span', {'id': 'ctl00_ContentPlaceHolder1_lblNoStudies'}).text == 'No studies are available at this time.':
+        driver.close()
         exit('There are currently no studies, come back next time')
 except(AttributeError):
     print("THERE'S A STUDY UP!")
@@ -76,3 +77,4 @@ except(AttributeError):
                 By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
         else:
             pass
+        driver.close()
