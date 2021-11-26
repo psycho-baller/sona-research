@@ -76,8 +76,3 @@ for link in links:
             By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
     else:
         pass
-
-
-# %%
-#import pandas as pd
-# df = pd.DataFrame(list of links)
