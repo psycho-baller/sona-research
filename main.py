@@ -41,7 +41,7 @@ table_row = soup.find('tr').parent.findNextSibling()
 
 try:
     if table_row.find('span', {'id': 'ctl00_ContentPlaceHolder1_lblNoStudies'}).text == 'No studies are available at this time.':
-        print('There are currently no studies, come back next time')
+        exit('There are currently no studies, come back next time')
 except(AttributeError):
     print("THERE'S A STUDY UP!")
     study_links = table_row.findAll(
@@ -59,20 +59,20 @@ except(AttributeError):
 
 
 # %%
-for link in links:
-    driver.get(link)
-    link = driver.page_source
-    #s = requests.Session()
-    #link = s.get(link).content
+    for link in links:
+        driver.get(link)
+        link = driver.page_source
+        #s = requests.Session()
+        #link = s.get(link).content
 
-    soup2 = bs(link, 'html.parser')
-    description = soup2.find(
-        'span', {'id': 'ctl00_ContentPlaceHolder1_lblLongDesc'}).get_text(' ')
-    print(description)
-    if input("\nIf u wanna participate in this study, press Enter, if not, type any letter then press Enter and you will see the next avalable if there is any other") == '':
-        driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin').click()
-        driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
-    else:
-        pass
+        soup2 = bs(link, 'html.parser')
+        description = soup2.find(
+            'span', {'id': 'ctl00_ContentPlaceHolder1_lblLongDesc'}).get_text(' ')
+        print(description)
+        if input("\nIf u wanna participate in this study, press Enter, if not, type any letter then press Enter and you will see the next avalable if there is any other") == '':
+            driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin').click()
+            driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
+        else:
+            pass
