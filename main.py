@@ -18,8 +18,8 @@ with warnings.catch_warnings():
 
 # %%
 url = 'https://ucalgary.sona-systems.com'
-user_ID = '6809'
-password = 'FMVGxnnd'
+user_ID = '<insert User ID here>'
+password = '<insert Password here>'
 
 driver.get(url)
 driver.find_element(
