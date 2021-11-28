@@ -9,7 +9,7 @@ If you're UCalgary and taking PSYC 200,201,203? This could be helpful for you
 
 When you run this code it will automatically check for u if there is a study up, and if there is, it will show you the study description and how many credits you will gain from taking it
 
-Then, you will be asked weather you want to take this study or not, if there is more than one study avalable, it will show you the decription of the other study once you decline the previous study
+Then, you will be asked weather you want to take this study or not. If there is more than one study available, it will show you the decription of the other study once you decline the previous study
 
 If you've accepted a study, you will be asked weather you want to start working on the study or not (if it's an online study)
 
