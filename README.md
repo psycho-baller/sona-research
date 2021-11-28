@@ -37,7 +37,7 @@ if you face any problems or interested in learning how I did this, please feel f
 
 discord: `Rami#2782`
 
-[email](mailto:rami.rami@ucalgary.ca)
+Email: [rami.rami@ucalgary.ca](mailto:rami.rami@ucalgary.ca)
 
 [Linkedin](https://www.linkedin.com/in/rami-maalouf-0b0228215/)
 
