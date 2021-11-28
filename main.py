@@ -51,9 +51,9 @@ for link in study_links:
 num_of_links = len(links)
 if num_of_links == 0:
     driver.close()
-    exit('There are no studies available currently, see u later!')
-print(f'there is {num_of_links} available study') if num_of_links == 1 else print(
-    f'there are {num_of_links} available studies')
+    exit('\nThere are no studies available currently, see u later!')
+print(f'\nthere is {num_of_links} available study') if num_of_links == 1 else print(
+    f'\nthere are {num_of_links} available studies')
 
 # %%
 for link in links:
@@ -74,13 +74,17 @@ for link in links:
         ActionChains(driver).click(element).perform()
         # not sure if this^ works, it's supposed to press the final submit button to sign up
 
-        if input('You got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
-            study_link = driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_lnkStudyPreview').get_attribute('href')
-            driver.close()
-            print('Enjoy!')
-            webbrowser.open(study_link)
+        if driver.find_element(By.ID, 'ctl00_SystemMessageLabel').text == 'Sign-up Successful':
+            if input('\nYou got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
+                study_link = driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_lnkStudyPreview').get_attribute('href')
+                driver.close()
+                print('\nEnjoy!')
+                webbrowser.open(study_link)
+            else:
+                driver.close()
+                print(
+                    '\nYou should recieve an email anytime now with the research link, have a woderful day')
         else:
-            driver.close()
             print(
-                'You should recieve an email anytime now with the research link, have a woderful day')
+                "Either there's a problem with the code or the sign up was unsucessful, probably the former lol, plz lmk if u got this error")
