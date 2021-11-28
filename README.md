@@ -27,7 +27,7 @@ To install these packages, go to your command prompt (search 'cmd' and you'll fi
 `pip install webdriver-manager`
 
 ## connect with me
-if you face any problems or interested in learning how I did this, please feel free to contact me on:
+if you face any problems or interested in learning how I did this, please feel free to contact me through:
 
 discord: `Rami#2782`
 
