@@ -9,11 +9,11 @@ If you're UCalgary and taking PSYC 200,201,203? This could be helpful for you
 
 When you run this code it will automatically check for u if there is a study up, and if there is, it will show you the study description and how many credits you will gain from taking it
 
-Then, you wll be asked weather you want to take this study or not, if there are more than one study avalable, it will show you the decription if the other study once you decline the previous study
+Then, you will be asked weather you want to take this study or not, if there is more than one study avalable, it will show you the decription of the other study once you decline the previous study
 
-If you've accepted a study, you will be ask weather you want to start working on the study or not (if it's an online study)
+If you've accepted a study, you will be asked weather you want to start working on the study or not (if it's an online study)
 
-Please connect with me if you have any good ideas to improve this project in any way
+Please [connect with me](#connect-with-me) if you have any good ideas to improve this project in any way
 
 # Setup
 Firstly, you will need to install python and have Google Chrome in your PC, I will add the ability to use Firefox instead of Chrome soon. You can install the latest version of python with the help of [this](https://youtu.be/dQw4w9WgXcQ) tutorial or [this](https://youtu.be/Kn1HF3oD19c) tutorial. Make sure you've installed pip while installing python
