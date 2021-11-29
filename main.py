@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options  # for suppressing the browser
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 
 import warnings
 from bs4 import BeautifulSoup as bs
@@ -68,16 +67,15 @@ for link in links:
     if input("\nIf u wanna participate in this study, press Enter, if not, type any letter then press Enter and you will see the next available if there is any other") == '':
         driver.find_element(
             By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin').click()
-
-        element = driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button')
-        ActionChains(driver).click(element).perform()
-        # not sure if this^ works, it's supposed to press the final submit button to sign up
+        driver.find_element(
+            By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
+        driver.find_element(
+            By.ID, 'ctl00_ContentPlaceHolder1_Submit_Button').click()
 
         if driver.find_element(By.ID, 'ctl00_SystemMessageLabel').text == 'Sign-up Successful':
             if input('\nYou got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
                 study_link = driver.find_element(
-                    By.ID, 'ctl00_ContentPlaceHolder1_lnkStudyPreview').get_attribute('href')
+                    By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href')
                 driver.close()
                 print('\nEnjoy!')
                 webbrowser.open(study_link)
