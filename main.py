@@ -74,8 +74,12 @@ for link in links:
 
         if driver.find_element(By.ID, 'ctl00_SystemMessageLabel').text == 'Sign-up Successful':
             if input('\nYou got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
-                study_link = driver.find_element(
-                    By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href')
+                try:
+                    study_link = driver.find_element(
+                        By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href')
+                except:
+                    driver.close()
+                    exit('Seems like the study is not online, if the study is actually online and you got this message please contact me so I can fix this problem')
                 driver.close()
                 print('\nEnjoy!')
                 webbrowser.open(study_link)
