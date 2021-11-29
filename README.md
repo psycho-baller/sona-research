@@ -30,7 +30,7 @@ You can either install there zip file [here](https://github.com/psycho-baller/UC
 
 
 
-Then, before running the [main.py](https://github.com/psycho-baller/UCalgary-research-participation/blob/master/main.py) file, insert your USER ID and password in line 26 and 27 respectively between the single quotation marks.
+Then, before running the [main.py](https://github.com/psycho-baller/UCalgary-research-participation/blob/master/main.py) file, insert your USER ID and password in line 25 and 26 respectively between the single quotation marks.
 
 # connect with me
 if you face any problems or interested in learning how I did this, please feel free to contact me through:
