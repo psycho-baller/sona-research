@@ -16,7 +16,7 @@ If you've accepted a study, you will be asked weather you want to start working 
 Please [connect with me](#connect-with-me) if you have any good ideas to improve this project in any way.
 
 # Setup
-Firstly, you will need to install python and have Google Chrome in your PC, I will add the ability to use Firefox instead of Chrome soon. You can install the latest version of python with the help of [this](https://youtu.be/dQw4w9WgXcQ) tutorial or [this](https://youtu.be/Kn1HF3oD19c) tutorial. Make sure you've installed pip while installing python.
+Firstly, you will need to install python and have Google Chrome in your PC, I will add the ability to use Firefox instead of Chrome soon. You can install the latest version of python with the help of <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">this</a> tutorial or <a href="https://youtu.be/Kn1HF3oD19c" target="_blank">this</a> tutorial. Make sure you've installed pip while installing python.
 
 Next, you'll have to install 2 packages: Selenium and Webdriver Manager.
 
