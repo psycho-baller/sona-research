@@ -57,36 +57,43 @@ print(f'\nthere is {num_of_links} available study') if num_of_links == 1 else pr
 # %%
 for link in links:
     driver.get(link)
+    already_completed = 0
     link = driver.page_source
-
     soup2 = bs(link, 'html.parser')
-    description = soup2.find(
-        'span', {'id': 'ctl00_ContentPlaceHolder1_lblLongDesc'}).get_text(' ')
-    print()
-    print(description)
-    if input("\nIf u wanna participate in this study, press Enter, if not, type any letter then press Enter and you will see the next available if there is any other") == '':
-        driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin').click()
-        driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
-        driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_Submit_Button').click()
 
-        if driver.find_element(By.ID, 'ctl00_SystemMessageLabel').text == 'Sign-up Successful':
-            if input('\nYou got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
-                try:
-                    study_link = driver.find_element(
-                        By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href')
-                except:
-                    driver.close()
-                    exit('Seems like the study is not online, if the study is actually online and you got this message please contact me so I can fix this problem')
-                driver.close()
-                print('\nEnjoy!')
-                webbrowser.open(study_link)
+    if len(driver.find_elements(By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin')) == 1:
+        description = soup2.find(
+            'span', {'id': 'ctl00_ContentPlaceHolder1_lblLongDesc'}).get_text(' ')
+        print(description)
+        if input("\nIf u wanna participate in this study, press Enter, if not, type any letter then press Enter and you will see the next avalable if there is any other") == '':
+            driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_lnkNonAdmin').click()
+            driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_repTimeSlots_ctl00_Submit_Button').click()
+            driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_Submit_Button').click()
+            if driver.find_element(By.ID, 'ctl00_SystemMessageLabel').text == 'Sign-up Successful':
+                if input('\nYou got signed up!, press Enter if u wanna start the research study, otherwise, type any letter then press Enter') == '':
+                    if driver.find_elements(By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href') != 0:
+                        study_link = driver.find_element(
+                            By.ID, 'ctl00_ContentPlaceHolder1_lnkWebsite').get_attribute('href')
+                        driver.close()
+                    else:
+                        driver.close()
+                        exit('Seems like the study is not online, if the study is actually online and you got this message please contact me so I can fix this problem')
+                    print('\nEnjoy!')
+                    webbrowser.open(study_link)
+                else:
+                    print(
+                        '\nYou should recieve an email anytime now with the research link, have a woderful day')
             else:
-                driver.close()
                 print(
-                    '\nYou should recieve an email anytime now with the research link, have a woderful day')
-        else:
-            print(
-                "Either there's a problem with the code or the sign up was unsucessful, probably the former lol, plz lmk if u got this error")
+                    "Either there's a problem with the code or the sign up was unsucessful, probably the former lol, plz lmk if u got this error")
+    elif len(driver.find_elements(By.ID, 'ctl00_ContentPlaceHolder1_lblNonAdmin')) == 1:
+        already_completed += 1
+
+driver.close()
+
+if already_completed > 0:
+    print('You have already completed all of the studies available') if already_completed == num_of_links else print(
+        f'You have already completed {already_completed} of the studies available')
