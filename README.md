@@ -5,7 +5,7 @@
 * [Future plans](#future-plans)
 
 # What it does
-If you're UCalgary and taking PSYC 200,201,203? This could be helpful for you.
+If you're a UCalgary student and taking PSYC 200,201,203? This could be helpful for you.
 
 When you run this code it will automatically check for u if there is a study up, and if there is, it will show you the study description and how many credits you will gain from taking it.
 
