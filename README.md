@@ -1,3 +1,5 @@
+P.S: I made a website so that everyone can enroll to get notified. Visit the website [here](https://www.open-seat-notifier.tech/), and the source code [here](https://github.com/psycho-baller/open-seat-notifier)
+
 ## Table of contents
 * [What it does](#What-it-does)
 * [Setup](#setup)
